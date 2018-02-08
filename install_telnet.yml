@@ -9,7 +9,7 @@
       command: date
       register: timestamp_start
     - debug: var=timestamp_start
-        - name: Install wget
+    - name: Install wget
       yum: pkg=wget state=absent
     - name: Install telnet
       yum: pkg=telnet state=latest
