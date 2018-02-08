@@ -1,5 +1,5 @@
  
-- hosts: all
+- hosts: 35.231.127.255
   user: rakeshmadhyastha788 ansible_ssh_private_key_file=/home/ec2-user/secrets/gcSecrets/gc.ppk
   become: yes
   tasks:
