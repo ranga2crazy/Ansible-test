@@ -7,7 +7,7 @@
       command: date
       register: timestamp_start
     - debug: var=timestamp_start
-    - name: Install lynx
-      yum: pkg=lynx state=latest
+    - name: Install wget
+      yum: pkg=wget state=latest
     - name: Install telnet
       yum: pkg=telnet state=latest

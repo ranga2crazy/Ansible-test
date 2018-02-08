@@ -8,4 +8,6 @@ cp install-telnet.yml telnet.sh /home/ec2-user/temp/
 cd /home/ec2-user/temp/
 chmod 755 *
 ansible-playbook install-telnet.yml
+cd
+rm -rf *
 echo done
