@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: remote
   become: yes
   tasks:
     - name: display hostname
@@ -10,3 +10,14 @@
     - debug: var=timestamp_start
     - name: Install telnet
       apt: name=telnet state=latest
+- hosts: local
+  become: yes
+  tasks:
+    - name: display hostname
+      command: hostname
+    - name: Date and Time the playbook started
+      command: date
+      register: timestamp_start
+    - debug: var=timestamp_start
+    - name: Install telnet
+      yum: pkg=telnet state=latest
