@@ -9,6 +9,6 @@
       register: timestamp_start
     - debug: var=timestamp_start
     - name: unInstall wget
-      yum: pkg=wget state=absent
+      apt-get: pkg=wget state=absent
     - name: Install telnet
-      yum: pkg=telnet state=latest
+      apt-get: pkg=telnet state=latest
