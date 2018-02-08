@@ -1,0 +1,7 @@
+---
+- hosts: 172.31.14.211 ansible_user=docker 
+  tasks:
+  - name: Pull Ubuntu image
+    docker_image:
+      name: ubuntu
+

@@ -1,0 +1,215 @@
+ansible-playbook 2.4.1.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/ansible/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible-playbook
+  python version = 2.7.5 (default, May  3 2017, 07:55:04) [GCC 4.8.5 20150623 (Red Hat 4.8.5-14)]
+Using /etc/ansible/ansible.cfg as config file
+Parsed /etc/ansible/hosts inventory source with ini plugin
+
+PLAYBOOK: install_telnet.yml *******************************************************************************************************************************************
+1 plays in install_telnet.yml
+
+PLAY [172.31.14.211] ***************************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.14.211> (0, '/home/docker\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247 `" && echo ansible-tmp-1510195903.45-220770745472247="` echo /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247 `" ) && sleep 0'"'"''
+<172.31.14.211> (0, 'ansible-tmp-1510195903.45-220770745472247=/home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247\n', '')
+<172.31.14.211> PUT /tmp/tmphMXdti TO /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/setup.py
+<172.31.14.211> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 '[172.31.14.211]'
+<172.31.14.211> (0, 'sftp> put /tmp/tmphMXdti /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/setup.py\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'chmod u+x /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/ /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/setup.py && sleep 0'"'"''
+<172.31.14.211> (0, '', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 -tt 172.31.14.211 '/bin/sh -c '"'"'sudo -H -S -n -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-sbzxeoxwmtggwknbygwboxxpetlmrjlr; /usr/bin/python /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/setup.py; rm -rf "/home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/" > /dev/null 2>&1'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.14.211> (0, '\r\n{"invocation": {"module_args": {"filter": "*", "gather_subset": ["all"], "fact_path": "/etc/ansible/facts.d", "gather_timeout": 10}}, "ansible_facts": {"ansible_veth12b8d4f": {"macaddress": "e6:3d:c1:6d:47:8b", "features": {"tx_checksum_ipv4": "off [fixed]", "generic_receive_offload": "on", "tx_checksum_ipv6": "off [fixed]", "tx_scatter_gather_fraglist": "on", "rx_all": "off [fixed]", "highdma": "on", "rx_fcs": "off [fixed]", "tx_lockless": "on [fixed]", "tx_tcp_ecn_segmentation": "on", "tx_tcp6_segmentation": "on", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_checksumming": "on", "vlan_challenged": "off [fixed]", "loopback": "off [fixed]", "fcoe_mtu": "off [fixed]", "scatter_gather": "on", "tx_checksum_sctp": "on", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "on", "tx_gso_partial": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "large_receive_offload": "off [fixed]", "tx_scatter_gather": "on", "rx_checksumming": "on", "tx_tcp_segmentation": "on", "netns_local": "off [fixed]", "busy_poll": "off [fixed]", "generic_segmentation_offload": "on", "tx_udp_tnl_segmentation": "on", "tcp_segmentation_offload": "on", "l2_fwd_offload": "off [fixed]", "rx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "tx_gre_csum_segmentation": "on", "tx_nocache_copy": "off", "tx_mpls_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "udp_fragmentation_offload": "on", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "on", "tx_checksum_fcoe_crc": "off [fixed]", "hw_tc_offload": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_fcoe_segmentation": "off [fixed]", "rx_vlan_filter": "off [fixed]", "tx_vlan_offload": "on", "receive_hashing": "off [fixed]", "tx_gre_segmentation": "on"}, "type": "ether", "hw_timestamp_filters": [], "mtu": 1500, "device": "veth12b8d4f", "promisc": true, "timestamping": ["rx_software", "software"], "ipv6": [{"scope": "link", "prefix": "64", "address": "fe80::e43d:c1ff:fe6d:478b"}], "active": true, "speed": 10000}, "ansible_product_serial": "ec2b9ab0-5864-12a8-209a-281ea542dda1", "ansible_form_factor": "Other", "ansible_distribution_file_parsed": true, "ansible_fips": false, "ansible_service_mgr": "systemd", "ansible_user_id": "root", "ansible_selinux_python_present": true, "ansible_userspace_bits": "64", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC9ROY7+XnjRaOX6ETdwQC6tauNvu1rTcujBDGUezeApx6WnnvD3wHNoatfODjf7Xnw+E5jbZp+ko2e19bbHaeE7yNv6JOfPBW6inrwyIyqaqSj5qkdIVnfIIyt0rKRydkSJ3JvazARLKdi5PUzTz/RMCIRJ06fvak7pciKlrKw41g1GOVjhL3Scr9GH7pKQShq6of66i8f8Vrfjqnid+bywFL9NUnCul1/LsZ1OJNyVGkhvQd3psrjcTU5GlRfPBp1m7ZGTYnejgYccwXVGdBp/vFVpIjfAVk/VVg4LP6A0mpNs58V0OoYu8FMPrXD9AxJ3VDQAZlOtv2U5ckYhLAP", "gather_subset": ["all"], "ansible_real_user_id": 0, "ansible_architecture": "x86_64", "ansible_local": {}, "ansible_distribution_version": "7.4", "ansible_domain": "eu-west-2.compute.internal", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_user_shell": "/bin/bash", "ansible_date_time": {"weekday_number": "4", "iso8601_basic_short": "20171109T025144", "tz": "UTC", "weeknumber": "45", "hour": "02", "year": "2017", "minute": "51", "tz_offset": "+0000", "month": "11", "epoch": "1510195904", "iso8601_micro": "2017-11-09T02:51:44.030572Z", "weekday": "Thursday", "time": "02:51:44", "date": "2017-11-09", "iso8601": "2017-11-09T02:51:44Z", "day": "09", "iso8601_basic": "20171109T025144030504", "second": "44"}, "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIAFUBqHq8IHkPLWdN1CwW2BsF3J59T9dsK+JVsQIeA3g", "ansible_processor_cores": 1, "ansible_virtualization_role": "guest", "ansible_distribution_file_variety": "RedHat", "ansible_env": {"USERNAME": "root", "LANG": "en_US.UTF-8", "TERM": "xterm", "SHELL": "/bin/bash", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-sbzxeoxwmtggwknbygwboxxpetlmrjlr; /usr/bin/python /home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/setup.py; rm -rf \\"/home/docker/.ansible/tmp/ansible-tmp-1510195903.45-220770745472247/\\" > /dev/null 2>&1", "SHLVL": "1", "SUDO_UID": "1001", "SUDO_GID": "1000", "PWD": "/home/docker", "LOGNAME": "root", "USER": "root", "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", "MAIL": "/var/mail/docker", "SUDO_USER": "docker", "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:", "HOME": "/root", "_": "/usr/bin/python"}, "ansible_effective_group_id": 0, "ansible_docker0": {"macaddress": "02:42:a6:06:63:2c", "features": {"tx_checksum_ipv4": "off [fixed]", "generic_receive_offload": "on", "tx_checksum_ipv6": "off [fixed]", "tx_scatter_gather_fraglist": "on", "rx_all": "off [fixed]", "highdma": "on", "rx_fcs": "off [fixed]", "tx_lockless": "on [fixed]", "tx_tcp_ecn_segmentation": "on", "tx_tcp6_segmentation": "on", "tx_gso_robust": "off [requested on]", "tx_ipip_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_checksumming": "on", "vlan_challenged": "off [fixed]", "loopback": "off [fixed]", "fcoe_mtu": "off [fixed]", "scatter_gather": "on", "tx_checksum_sctp": "off [fixed]", "tx_vlan_stag_hw_insert": "on", "rx_vlan_stag_hw_parse": "off [fixed]", "tx_gso_partial": "on", "rx_vlan_stag_filter": "off [fixed]", "large_receive_offload": "off [fixed]", "tx_scatter_gather": "on", "rx_checksumming": "off [fixed]", "tx_tcp_segmentation": "on", "netns_local": "on [fixed]", "busy_poll": "off [fixed]", "generic_segmentation_offload": "on", "tx_udp_tnl_segmentation": "on", "tcp_segmentation_offload": "on", "l2_fwd_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "tx_gre_csum_segmentation": "on", "tx_nocache_copy": "off", "tx_mpls_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "udp_fragmentation_offload": "on", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "on", "tx_checksum_fcoe_crc": "off [fixed]", "hw_tc_offload": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_fcoe_segmentation": "off [requested on]", "rx_vlan_filter": "off [fixed]", "tx_vlan_offload": "on", "receive_hashing": "off [fixed]", "tx_gre_segmentation": "on"}, "interfaces": ["veth12b8d4f"], "id": "8000.0242a606632c", "mtu": 1500, "device": "docker0", "promisc": false, "stp": false, "ipv4": {"broadcast": "global", "netmask": "255.255.0.0", "network": "172.17.0.0", "address": "172.17.0.1"}, "ipv6": [{"scope": "link", "prefix": "64", "address": "fe80::42:a6ff:fe06:632c"}], "active": true, "timestamping": ["rx_software", "software"], "type": "bridge", "hw_timestamp_filters": []}, "ansible_bios_version": "4.2.amazon", "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"], "ansible_virtualization_type": "xen", "ansible_lo": {"features": {"tx_checksum_ipv4": "off [fixed]", "generic_receive_offload": "on", "tx_checksum_ipv6": "off [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "rx_all": "off [fixed]", "highdma": "on [fixed]", "rx_fcs": "off [fixed]", "tx_lockless": "on [fixed]", "tx_tcp_ecn_segmentation": "on", "tx_tcp6_segmentation": "on", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "on", "tx_checksumming": "on", "vlan_challenged": "on [fixed]", "loopback": "on [fixed]", "fcoe_mtu": "off [fixed]", "scatter_gather": "on", "tx_checksum_sctp": "on [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "tx_gso_partial": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "large_receive_offload": "off [fixed]", "tx_scatter_gather": "on [fixed]", "rx_checksumming": "on [fixed]", "tx_tcp_segmentation": "on", "netns_local": "on [fixed]", "busy_poll": "off [fixed]", "generic_segmentation_offload": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tcp_segmentation_offload": "on", "l2_fwd_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_nocache_copy": "off [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "udp_fragmentation_offload": "on", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "hw_tc_offload": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "rx_vlan_filter": "off [fixed]", "tx_vlan_offload": "off [fixed]", "receive_hashing": "off [fixed]", "tx_gre_segmentation": "off [fixed]"}, "hw_timestamp_filters": [], "mtu": 65536, "device": "lo", "promisc": false, "timestamping": ["rx_software", "software"], "ipv4": {"broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0", "address": "127.0.0.1"}, "ipv6": [{"scope": "host", "prefix": "128", "address": "::1"}], "active": true, "type": "loopback"}, "ansible_memtotal_mb": 990, "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIxtEqqtSn8ONnsKsuxzCDChGepW1GmuVpcHQD4Q64Q1xi+czsjHxGaixuYTKW9AxmNXBjhwr3zHno5xa+HKuJE=", "ansible_device_links": {"masters": {"loop1": ["dm-0"], "loop0": ["dm-0"], "dm-0": ["dm-1"]}, "labels": {}, "ids": {"dm-1": ["dm-name-docker-202:2-2006-e6817c0f5f1a667899ddec5c8625d4296bfda4eb7a520c10ef7d9b4ec3a5e4ae"]}, "uuids": {"xvda2": ["de4def96-ff72-4eb9-ad5e-0847257d1866"], "dm-1": ["cd6caf29-71d6-482a-bfea-b3aab3a03941"]}}, "ansible_default_ipv4": {"macaddress": "06:b1:76:21:d5:aa", "network": "172.31.0.0", "mtu": 9001, "broadcast": "172.31.15.255", "alias": "eth0", "netmask": "255.255.240.0", "address": "172.31.14.211", "interface": "eth0", "type": "ether", "gateway": "172.31.0.1"}, "ansible_swapfree_mb": 0, "ansible_default_ipv6": {}, "ansible_distribution_release": "Maipo", "ansible_system_vendor": "Xen", "ansible_apparmor": {"status": "disabled"}, "ansible_cmdline": {"LANG": "en_US.UTF-8", "console": "tty0", "net.ifnames": "0", "crashkernel": "auto", "BOOT_IMAGE": "/boot/vmlinuz-3.10.0-693.el7.x86_64", "ro": true, "root": "UUID=de4def96-ff72-4eb9-ad5e-0847257d1866"}, "ansible_effective_user_id": 0, "ansible_user_gid": 0, "ansible_selinux": {"status": "enabled", "policyvers": 28, "type": "targeted", "mode": "enforcing", "config_mode": "enforcing"}, "ansible_product_version": "4.2.amazon", "ansible_os_family": "RedHat", "ansible_userspace_architecture": "x86_64", "ansible_product_uuid": "EC2B9AB0-5864-12A8-209A-281EA542DDA1", "ansible_system": "Linux", "ansible_pkg_mgr": "yum", "ansible_memfree_mb": 215, "ansible_devices": {"dm-1": {"scheduler_mode": "", "rotational": "1", "vendor": null, "sectors": "20971520", "links": {"masters": [], "labels": [], "ids": ["dm-name-docker-202:2-2006-e6817c0f5f1a667899ddec5c8625d4296bfda4eb7a520c10ef7d9b4ec3a5e4ae"], "uuids": ["cd6caf29-71d6-482a-bfea-b3aab3a03941"]}, "sas_device_handle": null, "sas_address": null, "virtual": 1, "host": "", "sectorsize": "512", "removable": "0", "support_discard": "65536", "model": null, "partitions": {}, "holders": [], "size": "10.00 GB"}, "loop1": {"scheduler_mode": "", "rotational": "1", "vendor": null, "sectors": "4194304", "links": {"masters": ["dm-0"], "labels": [], "ids": [], "uuids": []}, "sas_device_handle": null, "sas_address": null, "virtual": 1, "host": "", "sectorsize": "512", "removable": "0", "support_discard": "4096", "model": null, "partitions": {}, "holders": ["docker-202:2-2006-pool"], "size": "2.00 GB"}, "loop0": {"scheduler_mode": "", "rotational": "1", "vendor": null, "sectors": "209715200", "links": {"masters": ["dm-0"], "labels": [], "ids": [], "uuids": []}, "sas_device_handle": null, "sas_address": null, "virtual": 1, "host": "", "sectorsize": "512", "removable": "0", "support_discard": "4096", "model": null, "partitions": {}, "holders": ["docker-202:2-2006-pool"], "size": "100.00 GB"}, "dm-0": {"scheduler_mode": "", "rotational": "1", "vendor": null, "sectors": "209715200", "links": {"masters": ["dm-1"], "labels": [], "ids": [], "uuids": []}, "sas_device_handle": null, "sas_address": null, "virtual": 1, "host": "", "sectorsize": "512", "removable": "0", "support_discard": "4096", "model": null, "partitions": {}, "holders": ["docker-202:2-2006-e6817c0f5f1a667899ddec5c8625d4296bfda4eb7a520c10ef7d9b4ec3a5e4ae"], "size": "100.00 GB"}, "xvda": {"scheduler_mode": "deadline", "rotational": "0", "vendor": null, "sectors": "20971520", "links": {"masters": [], "labels": [], "ids": [], "uuids": []}, "sas_device_handle": null, "sas_address": null, "virtual": 1, "host": "", "sectorsize": "512", "removable": "0", "support_discard": "0", "model": null, "partitions": {"xvda1": {"sectorsize": 512, "uuid": null, "links": {"masters": [], "labels": [], "ids": [], "uuids": []}, "sectors": "2048", "start": "2048", "holders": [], "size": "1.00 MB"}, "xvda2": {"sectorsize": 512, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "links": {"masters": [], "labels": [], "ids": [], "uuids": ["de4def96-ff72-4eb9-ad5e-0847257d1866"]}, "sectors": "20967391", "start": "4096", "holders": [], "size": "10.00 GB"}}, "holders": [], "size": "10.00 GB"}}, "ansible_user_uid": 0, "ansible_lvm": {"pvs": {}, "lvs": {}, "vgs": {}}, "ansible_distribution": "RedHat", "ansible_user_dir": "/root", "ansible_dns": {"nameservers": ["172.31.0.2"], "search": ["eu-west-2.compute.internal"]}, "ansible_distribution_major_version": "7", "module_setup": true, "ansible_processor_count": 1, "ansible_hostname": "ip-172-31-14-211", "ansible_processor_vcpus": 1, "ansible_swaptotal_mb": 0, "ansible_lsb": {}, "ansible_real_group_id": 0, "ansible_bios_date": "08/24/2006", "ansible_all_ipv6_addresses": ["fe80::e43d:c1ff:fe6d:478b", "fe80::42:a6ff:fe06:632c", "fe80::4b1:76ff:fe21:d5aa"], "ansible_interfaces": ["eth0", "veth12b8d4f", "docker0", "lo"], "ansible_uptime_seconds": 242271, "ansible_machine_id": "c8f991f58d6742649ef320023ee0c9b7", "ansible_kernel": "3.10.0-693.el7.x86_64", "ansible_memory_mb": {"real": {"total": 990, "used": 775, "free": 215}, "swap": {"cached": 0, "total": 0, "free": 0, "used": 0}, "nocache": {"used": 269, "free": 721}}, "ansible_user_gecos": "root", "ansible_system_capabilities_enforced": "True", "ansible_python": {"executable": "/usr/bin/python", "version": {"micro": 5, "major": 2, "releaselevel": "final", "serial": 0, "minor": 7}, "type": "CPython", "has_sslcontext": true, "version_info": [2, 7, 5, "final", 0]}, "ansible_processor_threads_per_core": 1, "ansible_fqdn": "ip-172-31-14-211.eu-west-2.compute.internal", "ansible_mounts": [{"block_used": 571730, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "size_total": 10724814848, "block_total": 2618363, "mount": "/", "block_available": 2046633, "size_available": 8383008768, "fstype": "xfs", "inode_total": 5241840, "options": "rw,seclabel,relatime,attr2,inode64,noquota", "device": "/dev/xvda2", "inode_used": 35690, "block_size": 4096, "inode_available": 5206150}, {"block_used": 571730, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "size_total": 10724814848, "block_total": 2618363, "mount": "/var/lib/docker/plugins", "block_available": 2046633, "size_available": 8383008768, "fstype": "xfs", "inode_total": 5241840, "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind", "device": "/dev/xvda2", "inode_used": 35690, "block_size": 4096, "inode_available": 5206150}, {"block_used": 571730, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "size_total": 10724814848, "block_total": 2618363, "mount": "/var/lib/docker/plugins/ddc4408baadf640dfe4ba505a095e39161870b7fae897ec5e9c4981227247002/propagated-mount", "block_available": 2046633, "size_available": 8383008768, "fstype": "xfs", "inode_total": 5241840, "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind", "device": "/dev/xvda2", "inode_used": 35690, "block_size": 4096, "inode_available": 5206150}, {"block_used": 571730, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "size_total": 10724814848, "block_total": 2618363, "mount": "/var/lib/docker/plugins/ddc4408baadf640dfe4ba505a095e39161870b7fae897ec5e9c4981227247002/rootfs/run/docker", "block_available": 2046633, "size_available": 8383008768, "fstype": "xfs", "inode_total": 5241840, "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind", "device": "/dev/xvda2", "inode_used": 35690, "block_size": 4096, "inode_available": 5206150}, {"block_used": 571730, "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866", "size_total": 10724814848, "block_total": 2618363, "mount": "/var/lib/docker/devicemapper", "block_available": 2046633, "size_available": 8383008768, "fstype": "xfs", "inode_total": 5241840, "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind", "device": "/dev/xvda2", "inode_used": 35690, "block_size": 4096, "inode_available": 5206150}, {"block_used": 117414, "uuid": "cd6caf29-71d6-482a-bfea-b3aab3a03941", "size_total": 10725883904, "block_total": 2618624, "mount": "/var/lib/docker/devicemapper/mnt/e6817c0f5f1a667899ddec5c8625d4296bfda4eb7a520c10ef7d9b4ec3a5e4ae", "block_available": 2501210, "size_available": 10244956160, "fstype": "xfs", "inode_total": 5242368, "options": "rw,seclabel,relatime,nouuid,attr2,inode64,logbsize=64k,sunit=128,swidth=128,noquota", "device": "/dev/mapper/docker-202:2-2006-e6817c0f5f1a667899ddec5c8625d4296bfda4eb7a520c10ef7d9b4ec3a5e4ae", "inode_used": 23106, "block_size": 4096, "inode_available": 5219262}], "ansible_eth0": {"macaddress": "06:b1:76:21:d5:aa", "features": {"tx_checksum_ipv4": "on", "generic_receive_offload": "on", "tx_checksum_ipv6": "off [fixed]", "tx_scatter_gather_fraglist": "off [fixed]", "rx_all": "off [fixed]", "highdma": "off [fixed]", "rx_fcs": "off [fixed]", "tx_lockless": "off [fixed]", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp6_segmentation": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_checksumming": "on", "vlan_challenged": "off [fixed]", "loopback": "off [fixed]", "fcoe_mtu": "off [fixed]", "scatter_gather": "on", "tx_checksum_sctp": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "tx_gso_partial": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "large_receive_offload": "off [fixed]", "tx_scatter_gather": "on", "rx_checksumming": "on [fixed]", "tx_tcp_segmentation": "on", "netns_local": "off [fixed]", "busy_poll": "off [fixed]", "generic_segmentation_offload": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tcp_segmentation_offload": "on", "l2_fwd_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_nocache_copy": "off", "tx_mpls_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "udp_fragmentation_offload": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_sit_segmentation": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "hw_tc_offload": "off [fixed]", "tx_checksum_ip_generic": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "rx_vlan_filter": "off [fixed]", "tx_vlan_offload": "off [fixed]", "receive_hashing": "off [fixed]", "tx_gre_segmentation": "off [fixed]"}, "pciid": "vif-0", "module": "xen_netfront", "mtu": 9001, "device": "eth0", "promisc": false, "timestamping": ["rx_software", "software"], "ipv4": {"broadcast": "172.31.15.255", "netmask": "255.255.240.0", "network": "172.31.0.0", "address": "172.31.14.211"}, "ipv6": [{"scope": "link", "prefix": "64", "address": "fe80::4b1:76ff:fe21:d5aa"}], "active": true, "type": "ether", "hw_timestamp_filters": []}, "ansible_nodename": "ip-172-31-14-211.eu-west-2.compute.internal", "ansible_product_name": "HVM domU", "ansible_machine": "x86_64", "ansible_system_capabilities": ["cap_chown", "cap_dac_override", "cap_dac_read_search", "cap_fowner", "cap_fsetid", "cap_kill", "cap_setgid", "cap_setuid", "cap_setpcap", "cap_linux_immutable", "cap_net_bind_service", "cap_net_broadcast", "cap_net_admin", "cap_net_raw", "cap_ipc_lock", "cap_ipc_owner", "cap_sys_module", "cap_sys_rawio", "cap_sys_chroot", "cap_sys_ptrace", "cap_sys_pacct", "cap_sys_admin", "cap_sys_boot", "cap_sys_nice", "cap_sys_resource", "cap_sys_time", "cap_sys_tty_config", "cap_mknod", "cap_lease", "cap_audit_write", "cap_audit_control", "cap_setfcap", "cap_mac_override", "cap_mac_admin", "cap_syslog", "35", "36+ep"], "ansible_all_ipv4_addresses": ["172.17.0.1", "172.31.14.211"], "ansible_python_version": "2.7.5"}}\r\n', 'Shared connection to 172.31.14.211 closed.\r\n')
+ok: [172.31.14.211]
+META: ran handlers
+
+TASK [Date and Time the playbook started] ******************************************************************************************************************************
+task path: /etc/ansible/install_telnet.yml:7
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.14.211> (0, '/home/docker\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866 `" && echo ansible-tmp-1510195904.28-204702174913866="` echo /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866 `" ) && sleep 0'"'"''
+<172.31.14.211> (0, 'ansible-tmp-1510195904.28-204702174913866=/home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866\n', '')
+<172.31.14.211> PUT /tmp/tmpdDaj_U TO /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/command.py
+<172.31.14.211> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 '[172.31.14.211]'
+<172.31.14.211> (0, 'sftp> put /tmp/tmpdDaj_U /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/command.py\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'chmod u+x /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/ /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/command.py && sleep 0'"'"''
+<172.31.14.211> (0, '', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 -tt 172.31.14.211 '/bin/sh -c '"'"'sudo -H -S -n -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-sldaiidbxjclufemlxhnmziqakugkfqf; /usr/bin/python /home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/command.py; rm -rf "/home/docker/.ansible/tmp/ansible-tmp-1510195904.28-204702174913866/" > /dev/null 2>&1'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.14.211> (0, '\r\n{"changed": true, "end": "2017-11-09 02:51:44.485118", "stdout": "Thu Nov  9 02:51:44 UTC 2017", "cmd": ["/bin/date"], "rc": 0, "start": "2017-11-09 02:51:44.482319", "stderr": "", "delta": "0:00:00.002799", "invocation": {"module_args": {"warn": true, "executable": null, "_uses_shell": false, "_raw_params": "/bin/date", "removes": null, "creates": null, "chdir": null, "stdin": null}}}\r\n', 'Shared connection to 172.31.14.211 closed.\r\n')
+changed: [172.31.14.211] => {
+    "changed": true, 
+    "cmd": [
+        "/bin/date"
+    ], 
+    "delta": "0:00:00.002799", 
+    "end": "2017-11-09 02:51:44.485118", 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "/bin/date", 
+            "_uses_shell": false, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2017-11-09 02:51:44.482319", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "Thu Nov  9 02:51:44 UTC 2017", 
+    "stdout_lines": [
+        "Thu Nov  9 02:51:44 UTC 2017"
+    ]
+}
+
+TASK [debug] ***********************************************************************************************************************************************************
+task path: /etc/ansible/install_telnet.yml:10
+ok: [172.31.14.211] => {
+    "timestamp_start": {
+        "changed": true, 
+        "cmd": [
+            "/bin/date"
+        ], 
+        "delta": "0:00:00.002799", 
+        "end": "2017-11-09 02:51:44.485118", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2017-11-09 02:51:44.482319", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "Thu Nov  9 02:51:44 UTC 2017", 
+        "stdout_lines": [
+            "Thu Nov  9 02:51:44 UTC 2017"
+        ]
+    }
+}
+
+TASK [Install httpd on server] *****************************************************************************************************************************************
+task path: /etc/ansible/install_telnet.yml:11
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.14.211> (0, '/home/docker\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889 `" && echo ansible-tmp-1510195904.74-254147220666889="` echo /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889 `" ) && sleep 0'"'"''
+<172.31.14.211> (0, 'ansible-tmp-1510195904.74-254147220666889=/home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889\n', '')
+<172.31.14.211> PUT /tmp/tmpaUDzuX TO /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/yum.py
+<172.31.14.211> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 '[172.31.14.211]'
+<172.31.14.211> (0, 'sftp> put /tmp/tmpaUDzuX /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/yum.py\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'chmod u+x /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/ /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/yum.py && sleep 0'"'"''
+<172.31.14.211> (0, '', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 -tt 172.31.14.211 '/bin/sh -c '"'"'sudo -H -S -n -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-jdjhhlbgoofznguwhywyknjlgvmsigvb; /usr/bin/python /home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/yum.py; rm -rf "/home/docker/.ansible/tmp/ansible-tmp-1510195904.74-254147220666889/" > /dev/null 2>&1'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.14.211> (0, '\r\n{"msg": "", "invocation": {"module_args": {"allow_downgrade": false, "name": ["httpd"], "list": null, "install_repoquery": true, "conf_file": null, "disable_gpg_check": false, "state": "latest", "disablerepo": null, "update_cache": false, "pkg": "httpd", "enablerepo": null, "exclude": null, "security": false, "validate_certs": true, "installroot": "/", "skip_broken": false}}, "changed": false, "results": ["All packages providing httpd are up to date", ""], "rc": 0}\r\n', 'Shared connection to 172.31.14.211 closed.\r\n')
+ok: [172.31.14.211] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "httpd"
+            ], 
+            "pkg": "httpd", 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing httpd are up to date", 
+        ""
+    ]
+}
+
+TASK [debug] ***********************************************************************************************************************************************************
+task path: /etc/ansible/install_telnet.yml:14
+ok: [172.31.14.211] => {
+    "result": "VARIABLE IS NOT DEFINED!"
+}
+
+TASK [Install lynx] ****************************************************************************************************************************************************
+task path: /etc/ansible/install_telnet.yml:15
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.14.211> (0, '/home/docker\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161 `" && echo ansible-tmp-1510195907.22-141368607007161="` echo /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161 `" ) && sleep 0'"'"''
+<172.31.14.211> (0, 'ansible-tmp-1510195907.22-141368607007161=/home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161\n', '')
+<172.31.14.211> PUT /tmp/tmp7eaouc TO /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/yum.py
+<172.31.14.211> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 '[172.31.14.211]'
+<172.31.14.211> (0, 'sftp> put /tmp/tmp7eaouc /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/yum.py\n', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 172.31.14.211 '/bin/sh -c '"'"'chmod u+x /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/ /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/yum.py && sleep 0'"'"''
+<172.31.14.211> (0, '', '')
+<172.31.14.211> ESTABLISH SSH CONNECTION FOR USER: docker
+<172.31.14.211> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=docker -o ConnectTimeout=10 -o ControlPath=/home/ansible/.ansible/cp/10b035c813 -tt 172.31.14.211 '/bin/sh -c '"'"'sudo -H -S -n -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-fcjvmigzffdvfrgvrspnujohmrgjjich; /usr/bin/python /home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/yum.py; rm -rf "/home/docker/.ansible/tmp/ansible-tmp-1510195907.22-141368607007161/" > /dev/null 2>&1'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.14.211> (0, '\r\n{"changed": false, "results": ["No package matching \'lynx\' found available, installed or updated"], "failed": true, "rc": 126, "invocation": {"module_args": {"allow_downgrade": false, "name": ["lynx"], "list": null, "install_repoquery": true, "conf_file": null, "disable_gpg_check": false, "state": "latest", "disablerepo": null, "update_cache": false, "pkg": "lynx", "enablerepo": null, "exclude": null, "security": false, "validate_certs": true, "installroot": "/", "skip_broken": false}}, "msg": "No package matching \'lynx\' found available, installed or updated"}\r\n', 'Shared connection to 172.31.14.211 closed.\r\n')
+fatal: [172.31.14.211]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "lynx"
+            ], 
+            "pkg": "lynx", 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "msg": "No package matching 'lynx' found available, installed or updated", 
+    "rc": 126, 
+    "results": [
+        "No package matching 'lynx' found available, installed or updated"
+    ]
+}
+	to retry, use: --limit @/etc/ansible/install_telnet.retry
+
+PLAY RECAP *************************************************************************************************************************************************************
+172.31.14.211              : ok=5    changed=1    unreachable=0    failed=1   
+

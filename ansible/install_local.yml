@@ -1,0 +1,10 @@
+---
+- hosts: 172.31.14.211
+  user: docker
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: install docker-py using PIP
+    pip:
+     name: docker-py
+     state: present

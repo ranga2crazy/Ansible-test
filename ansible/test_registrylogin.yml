@@ -1,0 +1,21 @@
+---
+- hosts: all
+  remote_user: docker
+  vars_files:
+    - hub-creds.yml
+  become: yes
+  tasks:
+  - name: login to docker registry
+    docker_login:
+      username: "{{ docker_hub_usrnm }}"
+      password: "{{ docker_hub_pwd }}"
+      email: "{{ docker_hub_email }}"
+  - name: create custom docker container
+    docker_container:
+      name: mycustomcontainer
+      image: centos/apache:rt1
+      state: started
+      exposed_ports:
+        - 80
+      ports:
+        "70:100"

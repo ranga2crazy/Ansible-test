@@ -1,0 +1,6 @@
+Errors & Solutions:
+=====================
+TASK [update project using git] ************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["/usr/bin/git", "fetch", "origin"], "failed": true, "msg": "Failed to download remote objects and refs:  fatal: Unable to find remote helper for 'https'\n"}
+
+SOLUTION:Most people seem to have success uninstalling Git, install curl-devel, and then installing Git again.

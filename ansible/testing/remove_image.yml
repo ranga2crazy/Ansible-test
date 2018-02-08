@@ -1,0 +1,22 @@
+---
+- hosts: 172.31.14.211
+  user: docker
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: install docker-py using PIP
+    pip:
+     name: docker-py
+     state: present
+  - name: stop docker containers
+    docker:
+     image: swapnillinux/apache-php
+     state: stopped
+  - name: remove docker containers
+    docker:
+      image: swapnillinux/apache-php
+      state: absent
+  - name: Remove apache-php image
+    docker_image:
+     name: swapnillinux/apache-php 
+     state: absent

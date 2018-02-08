@@ -1,0 +1,23 @@
+ 
+- hosts: 172.31.14.211
+  user: docker
+  become: yes
+  tasks:
+    - name: Date and Time the playbook started
+      command: /bin/date
+      register: timestamp_start
+    - debug: var=timestamp_start
+    - name: Install httpd on server
+      yum: pkg=httpd state=latest
+      notify: Start HTTPD
+    - name: update yum repo
+      command: yum update
+    - name: Install lynx
+      yum: pkg=lynx state=latest
+    - name: Install telnet
+      yum: pkg=telnet state=latest
+      handlers:
+    - name: Start HTTPD
+      service: name=httpd state=restarted
+    - name: verify web service is running
+      command: systemctl status httpd

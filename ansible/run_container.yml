@@ -1,0 +1,8 @@
+---
+- hosts: 172.31.14.211
+  ansible_user=docker
+  tasks:
+    - name: Run a container using an image
+      docker:
+        image: nimmis/apache-php5
+        state: present
