@@ -1,6 +1,5 @@
 ---
 - hosts: gc
-  become: yes
   tasks:
     - name: display hostname
       command: hostname
