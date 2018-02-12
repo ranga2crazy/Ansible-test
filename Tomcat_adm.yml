@@ -8,4 +8,4 @@
       register: timestamp_start
     - debug: var=timestamp_start
     - name: start tomcat
-      command: /home/rakeshmadhyastha788/tomcat/apache-tomcat-9.0.4/bin/startup.sh
+      command: /home/rakeshmadhyastha788/Tomcat/apache-tomcat-9.0.4/bin/startup.sh
