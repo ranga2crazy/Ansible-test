@@ -9,5 +9,5 @@ cd /home/ec2-user/temp/
 chmod 755 *
 ansible-playbook install_telnet.yml -vvv
 cd
-rm -rf *
+rm -rf temp Ansible-test
 echo done
