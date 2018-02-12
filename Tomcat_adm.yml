@@ -1,0 +1,14 @@
+---
+- hosts: gc
+  become: yes
+  tasks:
+    - name: display hostname
+      command: hostname
+    - name: Date and Time the playbook started
+      command: date
+      register: timestamp_start
+    - debug: var=timestamp_start
+    - name: start tomcat
+      command: /home/rakeshmadhyastha788/tomcat/apache-tomcat-9.0.4/bin/startup.sh
+    - name: wait for tomcat to start
+      wait_for: port=8080
