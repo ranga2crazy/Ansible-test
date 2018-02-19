@@ -12,4 +12,4 @@
     file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
   - name: Start Tomcat
-    command: /home/tomcat/bin/actions.sh
+    command: 'nohup /home/tomcat/bin/actions.sh &'
