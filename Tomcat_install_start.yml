@@ -13,5 +13,5 @@
 
   - name: Start Tomcat
     shell: script.sh
-     args:
-      chdir: /opt/apache-tomcat-7.0.61/bin/
+    args:
+     chdir: /opt/apache-tomcat-7.0.61/bin/
