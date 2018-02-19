@@ -1,6 +1,6 @@
 ---
 - hosts: rrp
-  gather_facts: no
+  gather_facts: yes
   tasks:
   - name: Download Tomcat
     get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=/home/tomcat/apache-tomcat-7.0.61.tar.gz
