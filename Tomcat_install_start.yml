@@ -2,15 +2,15 @@
 - hosts: rrp
   gather_facts: no
   tasks:
-  - name: Download Tomcat
-    command: cd /home/tomcat
-    get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz
+   - name: Download Tomcat
+     command: cd
+     get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz
 
-  - name: Extract archive
-    command: /bin/tar xzvf /home/tomcat/apache-tomcat-7.0.61.tar.gz
+   - name: Extract archive
+     command: /bin/tar xzvf /home/tomcat/apache-tomcat-7.0.61.tar.gz
 
-  - name: Start Tomcat
-    command: /home/tomcat/apache-tomcat-7.0.61/bin/startup.sh
+   - name: Start Tomcat
+     command: /home/tomcat/apache-tomcat-7.0.61/bin/startup.sh
 
-  - name: wait for tomcat to start
-    wait_for: port=8080
+   - name: wait for tomcat to start
+     wait_for: port=8080
