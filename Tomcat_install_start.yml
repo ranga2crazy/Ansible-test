@@ -1,21 +1,21 @@
 ---
 - hosts: rrp
-  gather_facts: no 
+  gather_facts: yes
   tasks:
   - name: Download Tomcat
-    get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=/home/tomcat
+    get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=/home/tomcat/apache-tomcat-7.0.61.tar.gz
 
   - name: Extract archive
-    command: chdir=/home/tomcat /bin/tar xzvf /home/tomcat/apache-tomcat-7.0.61.tar.gz -C /home/ creates=/home/apache-tomcat-7.0.61
+    command: chdir=/home/tomcat/apache-tomcat-7.0.61.tar.gz /bin/tar xzvf /home/tomcat/apache-tomcat-7.0.61.tar.gz -C /home/tomcat/ creates=/home/tomcat/apache-tomcat-7.0.61
 
   - name: Symlink install directory
-    file: src=/home/apache-tomcat-7.0.61 path=/home/tomcat state=link
+    file: src=/home/tomcat/apache-tomcat-7.0.61 path=/home/tomcat/tomcat state=link
 
   - name: Change ownership of Tomcat installation
     file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
   - name: Start Tomcat
-    command: /home/apache-tomcat-7.0.61/bin/startup.sh
+    command: /home/tomcat/apache-tomcat-7.0.61/bin/startup.sh
 
   - name: wait for tomcat to start
     wait_for: port=8080
