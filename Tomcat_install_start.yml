@@ -8,14 +8,11 @@
     command: chdir=/usr/share /bin/tar xvf /opt/apache-tomcat-7.0.61.tar.gz -C /opt/ creates=/opt/apache-tomcat-7.0.61
 
   - name: Symlink install directory
-    file: src=/opt/apache-tomcat-7.0.61 path=/usr/share/tomcat state=link
+    file: src=/opt/apache-tomcat-7.0.61 path=/home/tomcat state=link
 
   - name: Change ownership of Tomcat installation
-    file: path=/usr/share/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
+    file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
-  - name: Configure Tomcat server
-    template: src=server.xml dest=/usr/share/tomcat/conf/
-  
   - name: Start Tomcat
     command: /opt/apache-tomcat-7.0.61/bin/startup.sh
 
