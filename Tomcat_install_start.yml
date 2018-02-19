@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
   - name: Download Tomcat
-    command: cd /home/tomcat
+    command: cd
     get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz
 
   - name: Extract archive
