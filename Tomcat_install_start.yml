@@ -20,3 +20,8 @@
     command: 'nohup /home/tomcat/bin/actions.sh stop'
     tags:
      - stop
+    
+  - name: status of Tomcat
+    command: 'nohup /home/tomcat/bin/actions.sh status'
+    tags:
+     - status
