@@ -12,4 +12,4 @@
     file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
   - name: Start Tomcat
-    command: /opt/tomcat/apache-tomcat-7.0.61/bin/startup.sh
+    command: /opt/apache-tomcat-7.0.61/bin/startup.sh
