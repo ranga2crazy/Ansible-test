@@ -12,6 +12,6 @@
     file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
   - name: Start Tomcat
-    shell: script.sh
+    shell: startup.sh
     args:
      chdir: /opt/apache-tomcat-7.0.61/bin/
