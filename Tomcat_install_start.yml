@@ -25,3 +25,8 @@
     command: 'nohup /home/tomcat/bin/actions.sh status'
     tags:
      - status
+   
+  - name: Deploy new war file
+    command: 'nohup /home/tomcat/bin/actions.sh deploy '
+    tags:
+     - deploy
