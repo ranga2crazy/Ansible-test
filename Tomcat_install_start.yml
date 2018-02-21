@@ -1,6 +1,8 @@
 ---
 - hosts: rrp
   gather_facts: no
+  vars:
+    my_url: "{{ url }}"
   tasks:
   - name: Download Tomcat
     get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=/opt/apache-tomcat-7.0.61.tar.gz
@@ -27,6 +29,6 @@
      - status
    
   - name: Deploy new war file
-    command: 'nohup /home/tomcat/bin/actions.sh deploy '
+    command: 'nohup /home/tomcat/bin/actions.sh deploy "{{ my_url }}"'
     tags:
      - deploy
