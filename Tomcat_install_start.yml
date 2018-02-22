@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 - hosts: rrp
   gather_facts: no
@@ -16,3 +17,39 @@
 
   - name: Start Tomcat
     command: /home/tomcat/apache-tomcat-7.0.61/bin/startup.sh
+=======
+---
+- hosts: rrp
+  gather_facts: no
+  vars:
+    m_version: "{{ version }}"
+  tasks:
+  - name: Download Tomcat
+    get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=/opt/apache-tomcat-7.0.61.tar.gz
+
+  - name: Extract archive
+    command: chdir=/home/tomcat /bin/tar xzvf /opt/apache-tomcat-7.0.61.tar.gz -C /opt/ creates=/opt/apache-tomcat-7.0.61
+
+  - name: Change ownership of Tomcat installation
+    file: path=/home/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
+
+  - name: Start Tomcat
+    command: 'nohup /home/tomcat/bin/actions.sh start'
+    tags:
+     - start
+     
+  - name: stop Tomcat
+    command: 'nohup /home/tomcat/bin/actions.sh stop'
+    tags:
+     - stop
+    
+  - name: status of Tomcat
+    command: 'nohup /home/tomcat/bin/actions.sh status'
+    tags:
+     - status
+   
+  - name: Deploy new war file
+    command: 'nohup /home/tomcat/bin/actions.sh deploy "{{ m_version }}"'
+    tags:
+     - deploy
+>>>>>>> c25cf5b664dafc4559e1ee3f2083822c0e808f3e
