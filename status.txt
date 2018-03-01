@@ -1,0 +1,6 @@
+'Application' Name is blank for 22 tickets  . Pls. enter the correct application name for those tickets in attached xls. I have marked all those tickets with yellow color.
+Infosys Assigned Datetime  is balnk for 288 tickets . I have marked those tickets with Yellow color
+WIP is balnk for 288 tickets. I have marked those tickets with Yellow color. May I KNOW why so high tickets with no WIP
+Env. Information  is missing for 196tickets. Pls. enter the Env. info for those tickets in attached xls I have marked all those tickets cell with yellow color.
+We have 10 tickets which are open in our queue, want to know the status of all.
+This month we have 154 cancelled tickets. What is the reason for so high cancel tickets.
